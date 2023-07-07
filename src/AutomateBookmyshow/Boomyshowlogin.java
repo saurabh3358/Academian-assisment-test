@@ -109,7 +109,16 @@ package AutomateBookmyshow;
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='sc-eLExRp ctptQL']")));
 				
 				 driver.findElement(By.xpath("//button[@class='sc-eLExRp ctptQL']")).click();
-					
+					 WebElement greetingElement = driver.findElement(By.xpath("//span[text()='Hi, Guest']"));
+			        String greetingText = greetingElement.getText();
+			        if (greetingText.equals("Hi, Guest")) {
+			            System.out.println("User is successfully signed in.");
+			        } else {
+			            System.out.println("Sign in unsuccessful.");
+			        }
+
+			        // Close the browser
+			        driver.quit();
 				
 				
 			}
